@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const data = require('./dummyData.js')
 const data2 = require('./moreDummyData.js')
-mongoose.connect('mongodb://localhost/tbay', {useUnifiedTopology: true, useNewUrlParser:true});
+mongoose.connect('mongodb+srv://FriendMiles:Igala1rele@cluster1-bpoqq.gcp.mongodb.net/test', {useUnifiedTopology: true, useNewUrlParser:true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'db connection error =('))
 db.once('open', function(){

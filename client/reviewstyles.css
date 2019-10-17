@@ -1,0 +1,394 @@
+.review-component {
+  line-height: 1.0em;
+  padding: 5px 40px 0 33px;
+}
+
+#reviews{
+  font-family: "Helvetica neue",Helvetica,Verdana,Sans-serif;
+  color: #555;
+}
+
+.reviews-right{
+  margin-top:-40px;
+}
+
+.r-list-fc {
+  width: 50%;
+  background-color: #999;
+  height: 12px;
+  display: block;
+  max-width: 100%;
+  padding: 0 !important
+}
+
+
+.rating-content-wrapper{
+  display:inline-block;
+  text-align: center;
+  max-height: 100px;
+  max-width: 275px;
+  margin-right: 30px;
+}
+
+.reviews-histogram {
+  max-width: 250px;
+  width: 230px;
+  display: inline-block;
+  margin: 10px 0;
+  padding-bottom: 20px;
+}
+
+.ebay-review-item{
+  display:inline-block;
+  height:18px;
+  width:100%
+}
+
+/* .ebay-review-list{
+  list-style-type: none;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+
+} */
+
+.ebay-reviews-item-href{
+  max-height: 20px;
+  display: block;
+}
+
+.reviews-histogram .ebay-review-list .ebay-review-item .ebay-reviews-item-href .ebay-review-item-r .r-list-bg {
+  max-width: 100%;
+  z-index: 9999999;
+  overflow: hidden;
+  background: transparent;
+  /* box-sizing: border-box; */
+  background-color: #ddd;
+  width: 90%;
+  height: 10px;
+  margin: 4px 0;
+  display: inline-block;
+  font-size: 12px;
+  /* -webkit-border-radius: 30px;
+  -moz-border-radius: 30px; */
+  border-radius: 30px;
+  /* text-align: -webkit-match-parent; */
+}
+
+.reviews-histogram .ebay-review-list .ebay-review-item {
+  display: inline-block;
+  height: 20px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.fa-star {
+  color: #f18e00;
+  background-size: 170px 125px;
+  text-align: left;
+  display: inline-block;
+  background-position: -68px -109px;
+  float: left;
+  margin: 3px 2px;
+  padding-bottom: 5px;
+}
+
+.ebay-review-item-l{
+  float:left;
+}
+
+.reviews-histogram .ebay-review-list .ebay-review-item .ebay-reviews-item-href .ebay-review-item-r {
+  float: right;
+  width: 80%;
+}
+
+.ebay-review-start-rating{
+  font-size: 4.5em;
+  line-height: 110%;
+}
+
+.ebay-reviews-count{
+  font-size: 0.75em;
+}
+
+.reviews-histogram .ebay-review-list .ebay-review-item .ebay-reviews-item-href .ebay-review-item-r .review-span {
+  position: absolute;
+  color: #555;
+  font-style: normal;
+  padding-left: 5px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.ebay-reviews-item-href i {
+  color: #999
+}
+
+.ebay-review-item-stars{
+  padding-right: 3px;
+  margin-top: 2px;
+  /* vertical-align: baseline; */
+}
+
+.review-button {
+  padding: .5em 1.2em;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.04);
+    vertical-align: baseline;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    zoom: 1;
+    display: inline-block;
+    border: 1px solid rgb(177, 176, 176);
+    float: right;
+    margin:auto auto;
+    font-size: 14px;
+    background: -webkit-gradient(linear,left top,left bottom,from(#fefefe),to(#f8f8f8));
+}
+
+.pie-container{
+  max-width: 105%;
+    max-height: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px 0;
+    vertical-align: top;
+}
+
+.pie-wrpr {
+  display: inline-block;
+  width: 140px;
+  height: 150px;
+  font-weight: 300;
+  vertical-align: bottom;
+  margin: 10px 10px
+}
+
+.pie-txt {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  line-height: 123%;
+  margin-top: 0 !important;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.pie{
+  background-color: rgba(241,142,0,0.2);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0 11px 35px;
+}
+
+.pie:before, .pie:after {
+  /* position: relative; */
+  text-align: center;
+  color: #555;
+  font-weight: 400;
+  padding-top:21px;
+  font-family: Arial,sans-serif;
+  font-size: 21px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  line-height: 1.2em;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(___YUICSSMIN_PRESERVED_TOKEN_0___)";
+
+}
+
+.pie:before {
+  background-color: #fff;
+  content: "100%";
+  width: 85%;
+  height: 60%;
+  z-index: 100;
+}
+
+.pie .left .pie-span {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -webkit-transform-origin: 100% 50%;
+}
+
+.pie>div {
+  float: left;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.pie:after {
+  content: attr(data-percent);
+  font-family: Arial,sans-serif;
+  font-size: 21px;
+  z-index: 200;
+  top: 0;
+  position: relative;
+  text-align: center;
+  color: #555;
+  font-weight: 400;
+}
+
+.pie .pie-span {
+  background-color: #f18e00;
+  display: block;
+  width: 40px;
+  height: 80px;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+}
+
+.pie .right .pie-span {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  -webkit-transform-origin: 0 50%;
+}
+
+.reviews-header {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 40px;
+  width: 100%;
+  border-bottom: solid 1px #c2c1c3;
+  -webkit-appearance: none;
+  height: 1px;
+  margin-left: 0;
+  display:block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  float:left;
+}
+
+.review-h2{
+  font-weight: bold;
+  font-size:20px;
+  width:50%;
+  display:inline-block;
+}
+
+.ebay-review-section-l {
+  width: 100px;
+  position: relative;
+  display: block;
+  float: left;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
+.ebay-review-section-r {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  width: 78%;
+  margin-left: 70px
+}
+
+.ebay-review-section {
+  margin-top: 20px;
+  clear: both;
+  width: 100%;
+  padding: 10px;
+  display: block;
+  position: relative;
+}
+
+.author-by .review-item-author{
+  color: #767676;
+  line-height: 15px;
+  margin-top: 7px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.review-item-date {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.reviews .star-rating i {
+  margin-left: -2px;
+}
+
+.review-item-title {
+  color: #4a4a4a;
+  font-size: 20px;
+  line-height: 120%;
+  margin: 0 0 8px !important;
+}
+
+.review-attr {
+  font-size: 12px;
+  color: #767676;
+  font-weight: 200;
+  margin: 0;
+}
+
+.review-item-content {
+  color: #555;
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0 0 8px 0 !important;
+}
+
+.review-btns {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  color: #767676;
+  text-align: left;
+  font-size: 12px;
+  line-height: 117%;
+  margin-top: 15px;
+}
+
+.review-btns>div {
+  display: inline-block;
+}
+
+.review-btns>div>a {
+  box-sizing: border-box;
+  display: inline-block;
+  color: #979797 !important;
+  border: 1px solid #767676;
+  padding: 3px 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.review-btns>div:nth-child(2) {
+  margin: 0 10px;
+}
+
+.fa-thumbs-up .fa-thumbs-down{
+  height:15px;
+  width: 15px;
+}
