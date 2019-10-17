@@ -12,7 +12,6 @@ const Histogram = (props) => (
     <div className="rating-content-wrapper">
       <span className="ebay-review-start-rating">4.9</span>
       <div className="ebay-star-rating">
-        <div>
           <span className="star-rating">
             <i className="fas fa-star"></i>
             <i className="fas fa-star"></i>
@@ -20,7 +19,6 @@ const Histogram = (props) => (
             <i className="fas fa-star"></i>
             <i className="fas fa-star"></i>
           </span>
-        </div>
       </div>
       <span className="ebay-reviews-count">44 product ratings</span>
     </div>
