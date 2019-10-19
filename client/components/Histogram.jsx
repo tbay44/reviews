@@ -97,6 +97,7 @@ const Histogram = (props) => (
         </li>
       </ul>
     </div>
+
     <div className="pie-container">
       <div role="img" className="en pie-wrpr" aria-label="100% Would recommend">
         <div className="pie">
