@@ -8,26 +8,32 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayId: '',
+      displayId: '7',
       ratingBreakdown: [0],
       reviews: [],
       user: {},
       avgRating: 0
     }
-    // this.showXStarRatings = this.showXStarRatings.bind();
   }
 
   componentDidMount() {
-    this.getReviews();
-    console.log(this.state.user)
+    this.getReviews(this.state.displayId);
+    window.addEventListener("uniqueId", (event) => {
+    this.setState({
+      displayId:window.uniqueId
+    })
+    this.getReviews(this.state.displayId);
+    })
+
   }
 
   showXStarRatings(numStars){
     return this.ratingBreakdown.filter(number => number === numStars).length
   }
 
-  getReviews() {
-    axios.get("/item").then(item => this.setState({
+  getReviews(id) {
+    axios.get(`/item/${id}`).then(item => this.setState({
+      displayId:id,
       user: item.data,
       reviews: item.data.reviews,
       ratingBreakdown: item.data.reviews.map(review => Math.ceil(review.rating / 2))

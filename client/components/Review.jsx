@@ -11,11 +11,11 @@ const Review = (props) => (
         <div className="ebay-star-rating">
           <div>
             <span className="star-rating">
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
+              <i className="fas fa-star" style={props.reviewData.rating/2 > 0 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.reviewData.rating/2 > 1 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.reviewData.rating/2 > 2 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.reviewData.rating/2 > 3 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star"style={props.reviewData.rating/2 > 4 ? {color: '#f18e00'}: {color:'#999'}}></i>
             </span>
           </div>
         </div>
@@ -23,7 +23,7 @@ const Review = (props) => (
           <span className="author-by">by</span>
           <a href="#" className="review-item-author">  {props.reviewData.user}  </a>
         </div>
-        <span className="review-item-date">     Oct 15, 2019   </span>
+        <span className="review-item-date">     Oct 15, 2019 {props.reviewData.rating}  </span>
       </div>
 
 {/* Actual Review */}
@@ -50,15 +50,15 @@ const Review = (props) => (
 {/* Upvote downvote buttons */}
         <div className="review-btns">
           <div className="updown-button-div">
-            <a href="#" className="review-signal vote-up-link" title="Select if this review was helpful">
+            <a href="#" className="review-signal vote-up-link">
               <i className="far fa-thumbs-up"></i>
-              <span className="review-section-rr-txt">(<span className="positive-h-c">0</span>)</span>
+              <span className="review-section-rr-txt">(<span className="positive-h-c">{props.reviewData.helpful}</span>)</span>
             </a>
           </div>
           <div name="vote" className="updown-button-div">
             <a href="#" className="review-signal vote-down-link">
               <i className="far fa-thumbs-down"></i>
-              <span className="review-section-rr-txt">(<span className="negative-h-c">0</span>)</span>
+              <span className="review-section-rr-txt">(<span className="negative-h-c">{props.reviewData.notHelpful}</span>)</span>
             </a>
           </div>
           <div className=" report-sec">

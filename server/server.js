@@ -7,8 +7,9 @@ app.use(express.static(path.join(__dirname + "/../client")));
 app.use(express.json());
 
 
-app.get('/item', function (req, res) {
-  db.fetchReviews(7, (err, item) => {
+app.get('/item/:id', function (req, res) {
+  console.log(req.params.id)
+  db.fetchReviews(req.params.id, (err, item) => {
     if (err) {
       console.log(err);
     } else {
