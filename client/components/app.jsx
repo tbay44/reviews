@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayId: '7',
+      displayId: '78',
       ratingBreakdown: [0],
       reviews: [],
       user: {},
@@ -20,7 +20,7 @@ class App extends React.Component {
     this.getReviews(this.state.displayId);
     window.addEventListener("uniqueId", (event) => {
     this.setState({
-      displayId:window.uniqueId
+      displayId: window.uniqueId
     })
     this.getReviews(this.state.displayId);
     })

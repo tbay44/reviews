@@ -23,7 +23,7 @@ const Review = (props) => (
           <span className="author-by">by</span>
           <a href="#" className="review-item-author">  {props.reviewData.user}  </a>
         </div>
-        <span className="review-item-date">     Oct 15, 2019 {props.reviewData.rating}  </span>
+        <span className="review-item-date">Oct 15, 2019</span>
       </div>
 
 {/* Actual Review */}
