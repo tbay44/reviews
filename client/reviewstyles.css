@@ -296,6 +296,7 @@
   line-height: 15px;
   display: inline-block;
   font-size: 12px;
+  min-width: 115px;
 }
 
 .review-item-date{
@@ -360,4 +361,12 @@
 .fa-thumbs-up .fa-thumbs-down{
   height:15px;
   width: 15px;
+}
+
+.ebay-star-rating{
+  min-height: 15px;
+}
+
+.blank{
+  color:#999;
 }

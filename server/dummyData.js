@@ -32,6 +32,18 @@ const pushReviews = function(dataO, dataD){
   return dataD;
 }
 
+const addTitleAndNewText = function(newText, existingData){
+  function randomReview(){
+    return newText[Math.floor(Math.random() * newText.length)]
+  }
+  existingData.forEach((datum) => {
+    let temp = randomReview()
+    datum.text = temp[1];
+    datum.title = temp[0];
+  })
+  return existingData;
+}
+
 const data =
 [ { id: 1,
   seller: 'AmerisourceBergen Corporation (Holding Co)',
@@ -314,4 +326,4 @@ const data =
   rating: 1,
   reviews: [] } ]
 
-module.exports = {data:data, dataTrimmer:dataTrimmer, addReviews:addReviews, pushReviews:pushReviews}
+module.exports = {data:data, dataTrimmer:dataTrimmer, addReviews:addReviews, pushReviews:pushReviews, addTitleAndNewText:addTitleAndNewText}

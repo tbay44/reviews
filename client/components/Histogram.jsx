@@ -1,28 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Histogram = (props) => (
+const Histogram = (props) => {
 
+  return(
+
+// Header
   <div className="review-aggregate">
-
     <div className="reviews-header">
       <h2 className="review-h2">Ratings and Reviews</h2>
       <a className="review-button" href="/review">Write a review</a>
     </div>
+
+    {/* Average rating component */}
     <div className="rating-content-wrapper">
-      <span className="ebay-review-start-rating">4.9</span>
+      <span className="ebay-review-start-rating">
+      {props.avgRating}
+      </span>
       <div className="ebay-star-rating">
           <span className="star-rating">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
+          <i className="fas fa-star" style={props.avgRating > 0 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.avgRating > 1 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.avgRating > 2 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.avgRating > 3 ? {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star"style={props.avgRating > 4 ? {color: '#f18e00'}: {color:'#999'}}></i>
           </span>
       </div>
-      <span className="ebay-reviews-count">44 product ratings</span>
+      <span className="ebay-reviews-count">{props.ratingBreakdown.length} product ratings</span>
     </div>
 
+    {/* Rating Breakdown */}
     <div className="reviews-histogram">
       <ul className="ebay-review-list">
         <li className="ebay-review-item">
@@ -33,9 +40,10 @@ const Histogram = (props) => (
             </div>
             <div className="ebay-review-item-r">
               <i className="r-list-bg">
-                <u className="r-list-fc"></u>
+                <u className="r-list-fc" style=
+                {{width:`${Math.floor((props.xStarRatings(5)* 100)/props.ratingBreakdown.length)}%`}}></u>
               </i>
-              <span className="review-span">39</span>
+              <span className="review-span">{props.xStarRatings(5)}</span>
             </div>
           </div>
         </li>
@@ -47,9 +55,10 @@ const Histogram = (props) => (
             </div>
             <div className="ebay-review-item-r">
               <i className="r-list-bg">
-                <u className="r-list-fc"></u>
+                <u className="r-list-fc" style=
+                {{width:`${Math.floor((props.xStarRatings(4)* 100)/props.ratingBreakdown.length)}%`}}></u>
               </i>
-              <span className="review-span">5</span>
+              <span className="review-span">{props.xStarRatings(4)}</span>
             </div>
           </div>
         </li>
@@ -61,9 +70,10 @@ const Histogram = (props) => (
             </div>
             <div className="ebay-review-item-r">
               <i className="r-list-bg">
-                <u className="r-list-fc"></u>
+                <u className="r-list-fc" style=
+                {{width:`${Math.floor((props.xStarRatings(3)* 100)/props.ratingBreakdown.length)}%`}}></u>
               </i>
-              <span className="review-span">0</span>
+              <span className="review-span">{props.xStarRatings(3)}</span>
             </div>
           </div>
         </li>
@@ -75,9 +85,12 @@ const Histogram = (props) => (
             </div>
             <div className="ebay-review-item-r">
               <i className="r-list-bg">
-                <u className="r-list-fc"></u>
+                <u className="r-list-fc"
+                style=
+                {{width:`${Math.floor((props.xStarRatings(2)* 100)/props.ratingBreakdown.length)}%`}}>
+                </u>
               </i>
-              <span className="review-span">0</span>
+              <span className="review-span">{props.xStarRatings(2)}</span>
             </div>
           </div>
         </li>
@@ -89,16 +102,19 @@ const Histogram = (props) => (
             </div>
             <div className="ebay-review-item-r">
               <i className="r-list-bg">
-                <u className="r-list-fc"></u>
+                <u className="r-list-fc" style=
+                {{width:`${Math.floor((props.xStarRatings(1)* 100)/props.ratingBreakdown.length)}%`}}></u>
               </i>
-              <span className="review-span">0</span>
+              <span className="review-span">{props.xStarRatings(1)}</span>
             </div>
           </div>
         </li>
       </ul>
     </div>
+
+    {/* Pie Buffet */}
     <div className="pie-container">
-      <div role="img" className="en pie-wrpr" aria-label="100% Would recommend">
+      <div className="en pie-wrpr">
         <div className="pie">
           <div className="left">
             <span className="pie-span"></span>
@@ -107,11 +123,11 @@ const Histogram = (props) => (
             <span className="pie-span"></span>
           </div>
         </div>
-        <p className="pie-txt" data-text="agree">
+        <p className="pie-txt">
           <span>Would recommend</span>
         </p>
       </div>
-      <div role="img" className="en pie-wrpr" aria-label="100% Good value">
+      <div className="en pie-wrpr">
         <div className="pie">
           <div className="left">
             <span className="pie-span"></span>
@@ -140,5 +156,5 @@ const Histogram = (props) => (
     </div>
   </div>
       )
-
+  }
 export default Histogram;
