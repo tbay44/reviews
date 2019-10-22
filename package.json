@@ -8,8 +8,9 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "start http://localhost:3001\"",
-    "build": "concurrently \"nodemon server/server.js\" && webpack --mode production"
+    "server" : "node server/server.js",
+    "open" : "start http://localhost:8081",
+    "start": "concurrently 'npm:react-dev' 'npm:server' 'npm:open'"
   },
   "dependencies": {
     "axios": "^0.19.0",
