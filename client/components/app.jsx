@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Review from './Review.jsx';
 import Histogram from './Histogram.jsx';
+import ReviewForm from './ReviewForm.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -12,7 +13,10 @@ class App extends React.Component {
       ratingBreakdown: [0],
       reviews: [],
       user: {},
-      avgRating: 0
+      avgRating: 0,
+      goodValuePercent:0,
+      wouldRecommendPercent:0,
+      goodQualityPercent:0
     }
   }
 
@@ -22,7 +26,6 @@ class App extends React.Component {
     this.setState({
       displayId: window.uniqueId
     })
-    this.getReviews(this.state.displayId);
     })
 
   }
@@ -31,10 +34,17 @@ class App extends React.Component {
     return this.ratingBreakdown.filter(number => number === numStars).length
   }
 
+  avgGoodValue(){
+    let trueCounter = 0;
+    reviews.forEach((review) => {
+
+    })
+  }
+
   getReviews(id) {
     axios.get(`/item/${id}`).then(item => this.setState({
       displayId:id,
-      user: item.data,
+      item: item.data,
       reviews: item.data.reviews,
       ratingBreakdown: item.data.reviews.map(review => Math.ceil(review.rating / 2))
 
@@ -51,6 +61,9 @@ class App extends React.Component {
     // console.log(this.state.user)
     return (
       <div className="review-component">
+        <div id="writeReview">
+          <ReviewForm displayId={this.state.displayId}/>
+        </div>
         <div id="histogram">
           <Histogram ratingBreakdown={this.state.ratingBreakdown} avgRating={this.state.avgRating}
           xStarRatings={this.showXStarRatings}/>
