@@ -60,13 +60,13 @@ class ReviewForm extends React.Component {
 
   render() {
     return (
-      <div className="overlayForm">
       <form>
       <div className="review-form-subheader">
         <h1>Product Name shall go here!</h1>
           <div>
           <input type="text" placeholder="Enter your user name" name="user" onChange={(e) => this.handleChange(e)}></input>
           </div>
+          <div className="review-star-rating">
           <h2>Rate this product</h2>
           <div className="ebay-star-rating">
             <span className="star-rating">
@@ -87,15 +87,19 @@ class ReviewForm extends React.Component {
                 style={this.state.stars > 4 ? { color: '#f18e00' } : { color: '#999' }}></i>
             </span>
           </div>
+          </div>
+
+          <div>
           <h2>Tell us more</h2>
+          </div>
         </div>
         <div className="true-false-ratings">
-          <div>
+          <div className="true-false-rating-item">
             <p>Would you recommend this product?</p>
             <button name="wouldRecommend" style={this.state.wouldRecommend === true ? {opacity:"1"} : {opacity:"0.5"} } onClick={(e) => this.handleTrueFalse(true, e)}>yes</button>
             <button name="wouldRecommend" style={this.state.wouldRecommend === false ? {opacity:"1"} : {opacity:"0.5"} } onClick={(e) => this.handleTrueFalse(false, e)}>no</button>
           </div>
-          <div>
+          <div className="true-false-rating-item">
             <p>Is it a good value?</p>
             <button name="goodValue" style={this.state.goodValue === true ? {opacity:"1"} : {opacity:"0.5"} } onClick={(e) => this.handleTrueFalse(true, e)}>yes</button>
             <button name="goodValue" style={this.state.goodValue === false ? {opacity:"1"} : {opacity:"0.5"} } onClick={(e) => this.handleTrueFalse(false, e)}>no</button>
@@ -116,7 +120,6 @@ class ReviewForm extends React.Component {
           <input type="button" className="review-button" name="cancel" value="Cancel"/>
         </div>
       </form>
-      </div>
     )
   }
 }

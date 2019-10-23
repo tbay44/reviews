@@ -363,23 +363,15 @@
   width: 15px;
 }
 
-.ebay-star-rating{
-  min-height: 15px;
-}
-
-.blank{
-  color:#999;
-}
-
-/* form {
-  display:inline-block;
-  width:100%;
-} */
-
 form input[type=submit] {
   display:inline-block;
   color:whitesmoke;
   background: -webkit-gradient(linear,left top,left bottom,from(#0079bc),to(#00509d));
+  margin-left: 8px;
+}
+
+form input[type=submit]:hover{
+  background:#00509d;
 }
 
 form input[type=button]{
@@ -388,8 +380,12 @@ form input[type=button]{
   margin-right:5px;
 }
 
+form input[type=button]:hover{
+  background:#DDDD;
+}
+
 form input[type=text], form textarea{
-  width:75%;
+  width:98%;
     box-shadow: none;
     border: 1px solid #999;
     padding: 6px;
@@ -397,25 +393,54 @@ form input[type=text], form textarea{
     margin:10px 0px;
 }
 
-.overlayForm{
+form textarea{
+  height:60px
+}
+
+#writeReview{
     background: #e2e2e2;
-    padding:15px;
+    padding:30px;
     line-height: 1.2em;
+    display:inline-block;
+    width:80%;
   }
 
 .true-false-ratings{
   display:block;
   border: 1px solid rgb(153, 153, 153);
   border-radius: 3px;
+  padding:23px;
+  background: white;
 }
 
 form button{
   display:inline-block;
-  margin:5px;
+  margin:9px 0px 9px 12px;
   height:30px;
-  width:40px;
+  width:50px;
+  float:right;
+  vertical-align: text-top;
 }
 
-form p{
+form p, form h2{
   display:inline-block;
 }
+
+.review-star-rating{
+  display:block;
+}
+
+form .ebay-star-rating{
+  float:right;
+  padding-top: 7px;
+}
+
+.form-star{
+font-size: 35px;
+}
+
+.true-false-rating-item{
+  border-bottom: 1px solid #c2c1c3;
+}
+
+
