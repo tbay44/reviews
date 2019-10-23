@@ -16,7 +16,7 @@ let reviewSchema = new mongoose.Schema({
   title: String,
   text: String,
   user: String,
-  createdAt: {$date:String},
+  createdAt: String,
   seller: String,
   verified: Boolean,
   wouldRecommend:Boolean,
@@ -43,10 +43,17 @@ let fetchReviews = function(id, callback){
   })
 }
 
+let writeReview = function(review, id, callback){
+  Item.updateOne({id:id}, {$push: {reviews:review} }, function(err, updatedComment){
+    if(err) console.log(err);
+    callback(null, updatedComment);
+  })
+}
+
 // Functions to seed DB
 
 // const almostComplete = data.addTitleAndNewText(data3, data2.data2)
 // const complete = data.pushReviews(almostComplete, data.data);
 // Item.insertMany(complete);
 
-module.exports = {fetchReviews};
+module.exports = {fetchReviews, writeReview};

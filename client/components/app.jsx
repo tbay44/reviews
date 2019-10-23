@@ -13,7 +13,10 @@ class App extends React.Component {
       ratingBreakdown: [0],
       reviews: [],
       user: {},
-      avgRating: 0
+      avgRating: 0,
+      goodValuePercent:0,
+      wouldRecommendPercent:0,
+      goodQualityPercent:0
     }
   }
 
@@ -23,13 +26,19 @@ class App extends React.Component {
     this.setState({
       displayId: window.uniqueId
     })
-    this.getReviews(this.state.displayId);
     })
 
   }
 
   showXStarRatings(numStars){
     return this.ratingBreakdown.filter(number => number === numStars).length
+  }
+
+  avgGoodValue(){
+    let trueCounter = 0;
+    this.state.reviews.forEach((review) => {
+
+    })
   }
 
   getReviews(id) {
@@ -53,7 +62,7 @@ class App extends React.Component {
     return (
       <div className="review-component">
         <div id="writeReview">
-          <ReviewForm />
+          <ReviewForm displayId={this.state.displayId}/>
         </div>
         <div id="histogram">
           <Histogram ratingBreakdown={this.state.ratingBreakdown} avgRating={this.state.avgRating}

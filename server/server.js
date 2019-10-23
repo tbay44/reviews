@@ -13,10 +13,22 @@ app.get('/item/:id', function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.send(item)
+      res.send(item);
     }
   })
 });
+
+app.post('/item/:id', function (req, res){
+  console.log(req.body);
+  db.writeReview(req.body, req.params.id, (err, updatedItem) => {
+    if(err){
+      console.log(err);
+    } else {
+      res.send(updatedItem)
+    }
+  })
+
+})
 
 app.listen(8081, () => {
   console.log('listening on port 8081...');
