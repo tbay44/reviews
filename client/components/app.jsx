@@ -36,7 +36,7 @@ class App extends React.Component {
 
   avgGoodValue(){
     let trueCounter = 0;
-    this.state.reviews.forEach((review) => {
+    reviews.forEach((review) => {
 
     })
   }

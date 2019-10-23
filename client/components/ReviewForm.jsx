@@ -41,7 +41,7 @@ class ReviewForm extends React.Component {
     axios.post(`/item/${this.props.displayId}`,
     {
       itemId:this.props.displayId,
-      rating:this.state.stars,
+      rating:this.state.stars * 2,
       title: this.state.title,
       text: this.state.text,
       user: this.state.user,
@@ -58,14 +58,15 @@ class ReviewForm extends React.Component {
     })
   }
 
-
-
   render() {
     return (
       <div className="overlayForm">
       <form>
       <div className="review-form-subheader">
         <h1>Product Name shall go here!</h1>
+          <div>
+          <input type="text" placeholder="Enter your user name" name="user" onChange={(e) => this.handleChange(e)}></input>
+          </div>
           <h2>Rate this product</h2>
           <div className="ebay-star-rating">
             <span className="star-rating">
@@ -111,8 +112,8 @@ class ReviewForm extends React.Component {
           <textarea placeholder="Write your review" name="text" onChange={(e) => this.handleChange(e)}></textarea>
         </div>
         <div>
-          <input type="submit" onClick={(e) => this.handleSubmit(e)}/>
-          <input type="button" name="Cancel" value="Cancel"/>
+          <input type="submit" className="review-button" name="form-submit" onClick={(e) => this.handleSubmit(e)}/>
+          <input type="button" className="review-button" name="cancel" value="Cancel"/>
         </div>
       </form>
       </div>

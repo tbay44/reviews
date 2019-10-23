@@ -370,3 +370,52 @@
 .blank{
   color:#999;
 }
+
+/* form {
+  display:inline-block;
+  width:100%;
+} */
+
+form input[type=submit] {
+  display:inline-block;
+  color:whitesmoke;
+  background: -webkit-gradient(linear,left top,left bottom,from(#0079bc),to(#00509d));
+}
+
+form input[type=button]{
+  display:inline-block;
+  color:#00509d;
+  margin-right:5px;
+}
+
+form input[type=text], form textarea{
+  width:75%;
+    box-shadow: none;
+    border: 1px solid #999;
+    padding: 6px;
+    border-radius: 4px !important;
+    margin:10px 0px;
+}
+
+.overlayForm{
+    background: #e2e2e2;
+    padding:15px;
+    line-height: 1.2em;
+  }
+
+.true-false-ratings{
+  display:block;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 3px;
+}
+
+form button{
+  display:inline-block;
+  margin:5px;
+  height:30px;
+  width:40px;
+}
+
+form p{
+  display:inline-block;
+}
