@@ -38,7 +38,7 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     let today = new Date();
-    axios.post(`/item/${this.props.displayId}`,
+    axios.post(`http://tbay-reviews.us-east-2.elasticbeanstalk.com//item/${this.props.displayId}`,
     {
       itemId:this.props.displayId,
       rating:this.state.stars * 2,
@@ -54,7 +54,7 @@ class ReviewForm extends React.Component {
       helpful: 0,
       notHelpful: 0
     }).then(function(response){
-      console.log(response);
+      // console.log(response);
     })
   }
 

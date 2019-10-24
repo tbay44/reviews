@@ -59,7 +59,7 @@ class App extends React.Component {
   }
 
   getReviews(id) {
-    axios.get(`/item/${id}`).then(item => this.setState({
+    axios.get(`http://tbay-reviews.us-east-2.elasticbeanstalk.com//item/${id}`).then(item => this.setState({
       displayId:id,
       item: item.data,
       reviews: item.data.reviews,
@@ -76,7 +76,6 @@ class App extends React.Component {
 
   render() {
     return (
-
       <div className="review-component">
         <div>
           <ReviewForm displayId={this.state.displayId} showMe={this.state.showMe} hideMe={this.formHide}/>
