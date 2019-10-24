@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Histogram = (props) => {
-
+  console.log(props)
   return(
 
 // Header
   <div className="review-aggregate">
     <div className="reviews-header">
       <h2 className="review-h2">Ratings and Reviews</h2>
-      <a className="review-button" href="/review">Write a review</a>
+      <a className="review-button" onClick={() => props.popUp()}>Write a review</a>
     </div>
 
     {/* Average rating component */}
@@ -19,11 +19,16 @@ const Histogram = (props) => {
       </span>
       <div className="ebay-star-rating">
           <span className="star-rating">
-          <i className="fas fa-star" style={props.avgRating > 0 ? {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star" style={props.avgRating > 1 ? {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star" style={props.avgRating > 2 ? {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star" style={props.avgRating > 3 ? {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star"style={props.avgRating > 4 ? {color: '#f18e00'}: {color:'#999'}}></i>
+          <i className="fas fa-star" style={props.avgRating > 0 ?
+             {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.avgRating > 1 ?
+                 {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.avgRating > 2 ?
+                 {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star" style={props.avgRating > 3 ?
+                 {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className="fas fa-star"style={props.avgRating > 4 ?
+                 {color: '#f18e00'}: {color:'#999'}}></i>
           </span>
       </div>
       <span className="ebay-reviews-count">{props.ratingBreakdown.length} product ratings</span>

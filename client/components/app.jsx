@@ -16,8 +16,12 @@ class App extends React.Component {
       avgRating: 0,
       goodValuePercent:0,
       wouldRecommendPercent:0,
-      goodQualityPercent:0
+      goodQualityPercent:0,
+      showMe:false
     }
+    this.formPopUp = this.formPopUp.bind(this);
+    this.formHide = this.formHide.bind(this);
+
   }
 
   componentDidMount() {
@@ -28,6 +32,19 @@ class App extends React.Component {
     })
     })
 
+  }
+
+  formPopUp(){
+    this.setState({
+      showMe:true
+    })
+  }
+
+  formHide(){
+
+    this.setState({
+      showMe:false
+    })
   }
 
   showXStarRatings(numStars){
@@ -58,15 +75,15 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.user)
     return (
+
       <div className="review-component">
-        <div id="writeReview">
-          <ReviewForm displayId={this.state.displayId}/>
+        <div>
+          <ReviewForm displayId={this.state.displayId} showMe={this.state.showMe} hideMe={this.formHide}/>
         </div>
         <div id="histogram">
           <Histogram ratingBreakdown={this.state.ratingBreakdown} avgRating={this.state.avgRating}
-          xStarRatings={this.showXStarRatings}/>
+          xStarRatings={this.showXStarRatings} popUp={this.formPopUp}/>
         </div>
         <div className="reviews-right">
           <div className="reviews-header">

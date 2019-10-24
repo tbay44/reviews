@@ -59,7 +59,10 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+    if(this.props.showMe){
     return (
+      <div className="review-modal">
+      <div name="review-form" id="writeReview">
       <form>
       <div className="review-form-subheader">
         <h1>Product Name shall go here!</h1>
@@ -117,11 +120,16 @@ class ReviewForm extends React.Component {
         </div>
         <div>
           <input type="submit" className="review-button" name="form-submit" onClick={(e) => this.handleSubmit(e)}/>
-          <input type="button" className="review-button" name="cancel" value="Cancel"/>
+          <input type="button" className="review-button" name="cancel" value="Cancel" onClick={(e) => this.props.hideMe(e)}/>
         </div>
       </form>
+      </div>
+      </div>
     )
+  } else {
+    return (null)
   }
+}
 }
 
 export default ReviewForm;

@@ -394,33 +394,26 @@ form input[type=text], form textarea{
 }
 
 form textarea{
-  height:60px
+  height:50px
 }
 
 #writeReview{
-    /* background: #e2e2e2;
+    background: #e2e2e2;
     padding:30px;
-    line-height: 1.2em;
-    display:inline-block;
-    width:80%; */
-    display:none;
-    position: fixed; /* Stay in place */
-    z-index: 300000000000; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    line-height: 1em;
+    display: block;
+    width:50%;
+    z-index: 100100; /* Sit on top */
+    margin:20px auto;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border-radius: 10px;
   }
 
 .true-false-ratings{
   display:block;
   border: 1px solid rgb(153, 153, 153);
   border-radius: 3px;
-  padding:17px 24px;
+  padding:12px 22px;
   background: white;
 }
 
@@ -454,4 +447,16 @@ font-size: 35px;
   border-bottom: 1px solid #c2c1c3;
 }
 
+.review-modal{
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
 
