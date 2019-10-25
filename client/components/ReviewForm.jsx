@@ -37,9 +37,12 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault()
     let today = new Date();
-    axios.post(`http://tbay-reviews.us-east-2.elasticbeanstalk.com//item/${this.props.displayId}`,
-    {
+    axios.post(
+      // `/item/${this.props.displayId}`
+      `http://tbay-reviews.us-east-2.elasticbeanstalk.com/item/${this.props.displayId}`
+      ,{
       itemId:this.props.displayId,
       rating:this.state.stars * 2,
       title: this.state.title,
@@ -53,9 +56,9 @@ class ReviewForm extends React.Component {
       goodQuality: this.state.goodQuality,
       helpful: 0,
       notHelpful: 0
-    }).then(function(response){
-      // console.log(response);
-    })
+    }).then(() => {
+      this.props.hideMe();
+    });
   }
 
   render() {

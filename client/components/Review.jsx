@@ -62,9 +62,6 @@ const Review = (props) => (
             </a>
           </div>
           <div className=" report-sec">
-            {/* <a href="javascript:;" className="review-signal report-spam-link" data-value="report" aria-label="Why is this review inappropriate?" title="Report if this review was inappropriate">
-              <span className="review-section-rr-img inapp-img"></span>
-            </a> */}
           </div>
         </div>
       </div>

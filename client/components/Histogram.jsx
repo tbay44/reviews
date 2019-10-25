@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Histogram = (props) => {
-  console.log(props)
+  console.log(props.wouldRecommend)
   return(
 
 // Header
@@ -119,39 +119,51 @@ const Histogram = (props) => {
 
     {/* Pie Buffet */}
     <div className="pie-container">
-      <div className="en pie-wrpr">
-        <div className="pie">
+      <div className="en pie-wrpr" >
+        <div className="pie" data-percent={props.wouldRecommend + '%'}>
           <div className="left">
-            <span className="pie-span"></span>
+          <span className="pie-span" style={{transform: `rotateZ(${
+              props.wouldRecommend <=50 ? -180 : props.wouldRecommend * -3.6
+            }deg)`}}></span>
           </div>
           <div className="right">
-            <span className="pie-span"></span>
-          </div>
+          <span className="pie-span" style={{transform: `rotateZ(${
+              props.wouldRecommend >= 50 ? 0 : (50 + props.wouldRecommend) * -3.6
+            }deg)`}}></span>
+            </div>
         </div>
         <p className="pie-txt">
           <span>Would recommend</span>
         </p>
       </div>
       <div className="en pie-wrpr">
-        <div className="pie">
+        <div className="pie" data-percent={props.goodValue + '%'}>
           <div className="left">
-            <span className="pie-span"></span>
+          <span className="pie-span" style={{transform: `rotateZ(${
+              props.goodValue <=50 ? -180 : props.goodValue * -3.6
+            }deg)`}}></span>
           </div>
           <div className="right">
-            <span className="pie-span"></span>
-          </div>
+          <span className="pie-span" style={{transform: `rotateZ(${
+              props.goodValue >= 50 ? 0 : (50 + props.goodValue) * -3.6
+            }deg)`}}></span>
+            </div>
         </div>
         <p className="pie-txt" data-text="agree">
           <span>Good value</span>
         </p>
       </div>
-      <div role="img" className="en pie-wrpr" aria-label="100% Good quality">
-        <div className="pie">
+      <div role="img" className="en pie-wrpr">
+        <div className="pie" data-percent={props.goodQuality + '%'}>
           <div className="left">
-            <span className="pie-span"></span>
+            <span className="pie-span" style={{transform: `rotateZ(${
+              props.goodQuality <= 50 ? -180 : props.goodQuality * -3.6
+            }deg)`}}></span>
           </div>
           <div className="right">
-            <span className="pie-span"></span>
+          <span className="pie-span" style={{transform: `rotateZ(${
+              props.goodQuality >= 50 ? 0 : (50 + props.goodQuality) * -3.6
+            }deg)`}}></span>
           </div>
         </div>
         <p className="pie-txt" data-text="agree">

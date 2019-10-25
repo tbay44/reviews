@@ -29,6 +29,7 @@ let reviewSchema = new mongoose.Schema({
 let itemSchema = new mongoose.Schema({
   id:Number,
   seller:String,
+  name: String,
   rating:Number,
   reviews:[reviewSchema]
 })

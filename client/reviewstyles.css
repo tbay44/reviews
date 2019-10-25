@@ -190,14 +190,13 @@
 }
 
 .pie:before {
+  content:attr(data-percent);
   background-color: #fff;
-  content: "100%";
   width: 85%;
   height: 60%;
   z-index: 100;
 }
 .pie:after {
-  content: attr(data-percent);
   font-family: Arial,sans-serif;
   font-size: 21px;
   z-index: 200;
