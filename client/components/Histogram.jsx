@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 const Histogram = (props) => {
-  console.log(props.wouldRecommend)
+
   return(
 
 // Header
@@ -19,16 +20,11 @@ const Histogram = (props) => {
       </span>
       <div className="ebay-star-rating">
           <span className="star-rating">
-          <i className="fas fa-star" style={props.avgRating > 0 ?
-             {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star" style={props.avgRating > 1 ?
-                 {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star" style={props.avgRating > 2 ?
-                 {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star" style={props.avgRating > 3 ?
-                 {color: '#f18e00'}: {color:'#999'}}></i>
-              <i className="fas fa-star"style={props.avgRating > 4 ?
-                 {color: '#f18e00'}: {color:'#999'}}></i>
+              <i className={props.starPicker(props.avgRating, 1)}></i>
+              <i className={props.starPicker(props.avgRating, 2)}></i>
+              <i className={props.starPicker(props.avgRating, 3)}></i>
+              <i className={props.starPicker(props.avgRating, 4)}></i>
+              <i className={props.starPicker(props.avgRating, 5)}></i>
           </span>
       </div>
       <span className="ebay-reviews-count">{props.ratingBreakdown.length} product ratings</span>
@@ -46,7 +42,7 @@ const Histogram = (props) => {
             <div className="ebay-review-item-r">
               <i className="r-list-bg">
                 <u className="r-list-fc" style=
-                {{width:`${Math.floor((props.xStarRatings(5)* 100)/props.ratingBreakdown.length)}%`}}></u>
+                {{width:`${Math.round((props.xStarRatings(5)* 100)/props.ratingBreakdown.length)}%`}}></u>
               </i>
               <span className="review-span">{props.xStarRatings(5)}</span>
             </div>
@@ -174,4 +170,5 @@ const Histogram = (props) => {
   </div>
       )
   }
+
 export default Histogram;

@@ -393,7 +393,7 @@ form input[type=text], form textarea{
 }
 
 form textarea{
-  height:50px
+  height:50px;
 }
 
 #writeReview{
@@ -405,7 +405,7 @@ form textarea{
     z-index: 100100; /* Sit on top */
     margin:20px auto;
     overflow: auto; /* Enable scroll if needed */
-    border-radius: 10px;
+    border-radius: 6px;
   }
 
 .true-false-ratings{
@@ -414,19 +414,30 @@ form textarea{
   border-radius: 3px;
   padding:12px 22px;
   background: white;
+  font-size:1.0em
 }
 
 form button{
   display:inline-block;
   margin:9px 0px 9px 12px;
-  height:30px;
-  width:50px;
+  height:25px;
+  width:40px;
   float:right;
   vertical-align: text-top;
 }
 
+form h1{
+  font-size: 1.3em;
+  padding:auto;
+  line-height: 1.2em;
+}
+
 form p, form h2{
   display:inline-block;
+}
+
+form h2{
+  font-size:1.2em;
 }
 
 .review-star-rating{
@@ -459,3 +470,65 @@ font-size: 35px;
     background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
 }
 
+.midStar{
+  color: #333;
+line-height: 1;
+font-weight: normal;
+font-family: "Market Sans", Arial, sans-serif;
+list-style-type: none;
+white-space: initial;
+margin: 0;
+padding: 0;
+font-size: 100%;
+box-sizing: border-box;
+background: url(https://ir.ebaystatic.com/f/ndzx0lxole32fflkcjkfbyzulah.png);
+background-size: 185px 136px;
+overflow: hidden;
+text-align: left;
+width: 16px;
+height: 15px;
+display: inline-block;
+background-position: -55px -120px;
+}
+
+.emptyStar{
+  color: #333;
+line-height: 1;
+font-weight: normal;
+font-family: "Market Sans", Arial, sans-serif;
+list-style-type: none;
+white-space: initial;
+margin: 0;
+padding: 0;
+font-size: 100%;
+box-sizing: border-box;
+background: url(https://ir.ebaystatic.com/f/ndzx0lxole32fflkcjkfbyzulah.png);
+background-size: 185px 136px;
+overflow: hidden;
+text-align: left;
+width: 18px;
+height: 15px;
+display: inline-block;
+background-position: -37px -120px;
+}
+
+.fullStar{
+  color: #333;
+line-height: 1;
+font-weight: normal;
+font-family: "Market Sans", Arial, sans-serif;
+list-style-type: none;
+white-space: initial;
+margin: 0;
+padding: 0;
+font-size: 100%;
+box-sizing: border-box;
+background: url(https://ir.ebaystatic.com/f/ndzx0lxole32fflkcjkfbyzulah.png);
+background-size: 185px 136px;
+overflow: hidden;
+text-align: left;
+width: 16px;
+height: 15px;
+display: inline-block;
+background-position: -19px -120px;
+}

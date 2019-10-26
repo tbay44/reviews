@@ -13,8 +13,17 @@ class ReviewForm extends React.Component {
       goodValue: '',
       goodQuality: '',
       createdAt:'',
-      user:'RonnyTheBear'
+      user:'RonnyTheBear',
+      productName:'default product name! change me please what happens when this gets too long?'
     }
+  }
+
+  componentDidMount(){
+    window.addEventListener("productName", (event) => {
+      this.setState({
+        productName: window.productName
+      })
+    })
   }
 
   handleClick(num) {
@@ -68,7 +77,7 @@ class ReviewForm extends React.Component {
       <div name="review-form" id="writeReview">
       <form>
       <div className="review-form-subheader">
-        <h1>Product Name shall go here!</h1>
+        <h1>{this.state.productName}</h1>
           <div>
           <input type="text" placeholder="Enter your user name" name="user" onChange={(e) => this.handleChange(e)}></input>
           </div>

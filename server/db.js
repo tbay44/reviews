@@ -51,6 +51,49 @@ let writeReview = function(review, id, callback){
   })
 }
 
+addRandomDate = function(){
+  let monthOptions = [
+    'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'
+    ,'Dec'
+  ]
+  let result = '';
+  let dayMaker = Math.floor(Math.random() * (28 - 1) + 1)
+  if(dayMaker < 10){
+      dayMaker = '0'+ dayMaker;
+  } else {
+      dayMaker = dayMaker + '';
+  }
+  result += monthOptions[Math.floor(Math.random() * 12)]
+  +' ' + dayMaker + ', '
+  + Math.floor(Math.random() * (2018 - 2012) + 2012)
+  return result;
+}
+
+// Rating.updateMany({}, {createdAt:addRandomDate()}, function(err, items){
+//   if(err) console.log(err);
+//   console.log(items);
+// })
+
+// Item.updateOne({id:63}, {$set: {reviews.createdAt}})
+
+// Item.find({"reviews.createdAt": {$in:  }}, {"comments.comment": 1})
+//   .then(function(results){
+//     return results.map(function(userComment){
+
+//        userComment.comments.forEach(function(commentContainer){
+//          // Check if this comment contains banned phrases
+//          if(bannedPhrases.indexOf(commentContainer.comment) >= 0) {
+//            commentContainer.isHidden = true;
+//          }
+//        });
+
+//        return userComment.save();
+//     });
+//   }).then(function(promises){
+//      // This step may vary depending on which promise library you are using
+//      return Promise.all(promises);
+//   });
+
 // Functions to seed DB
 
 // const almostComplete = data.addTitleAndNewText(data3, data2.data2)

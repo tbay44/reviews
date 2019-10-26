@@ -10,10 +10,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayId: '78',
+      displayId: '99',
       ratingBreakdown: [0],
       reviews: [],
-      user: {},
+      item: {},
       avgRating: 0,
       goodValuePercent: 0,
       wouldRecommendPercent: 0,
@@ -26,12 +26,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    window.addEventListener("uniqueId", (event) => {
-      this.setState({
-        displayId: window.uniqueId
-      })
-    })
-    if (this.state.showMe !== prevState.showMe) {
+    if (this.state.showMe !== prevState.showMe || this.state.displayId !== prevState.displayId) {
       this.getReviews(this.state.displayId);
     }
   }
@@ -41,13 +36,21 @@ class App extends React.Component {
     window.addEventListener("uniqueId", (event) => {
       this.setState({
         displayId: window.uniqueId
+      }, ()=> {this.getReviews(this.state.displayId);
       })
     })
   }
 
-  addReview() {
-
+  starPicker(rating, num){
+    if(num - rating <= 0.25){
+      return 'fullStar';
+    } else if(num - rating > 0.25 && num-rating <= 0.75){
+      return 'midStar';
+    } else {
+      return 'emptyStar';
+    }
   }
+
 
   formPopUp() {
     this.setState({
@@ -103,6 +106,26 @@ class App extends React.Component {
     console.log(trueCounter)
   }
 
+  getStarAverage(){
+    return Math.round((this.state.ratingBreakdown
+      .reduce((acc, total) => acc + total) / this.state.ratingBreakdown.length) * 10) / 10
+  }
+
+  emitStarRating(){
+    window.starAverage = {
+      starAverage: this.getStarAverage(),
+      totalRatings: this.state.ratingBreakdown.length
+    };
+    const starAverage = new CustomEvent(
+      "starAverage",{
+          detail: {
+            starAverage: 'changed'
+          }
+        }
+  )
+  window.dispatchEvent(starAverage);
+  }
+
   getReviews(id) {
     axios.get(
       `http://tbay-reviews.us-east-2.elasticbeanstalk.com/item/${id}`
@@ -110,20 +133,20 @@ class App extends React.Component {
     ).then(item => this.setState({
       displayId: id,
       item: item.data,
-      reviews: item.data.reviews,
+      reviews: item.data.reviews.reverse(),
       ratingBreakdown: item.data.reviews.map(review => Math.ceil(review.rating / 2))
 
     }))
       .then(() => {
         this.setState({
-          avgRating: Math.round((this.state.ratingBreakdown
-            .reduce((acc, total) => acc + total) / this.state.ratingBreakdown.length) * 10) / 10
+          avgRating: this.getStarAverage()
         })
       })
       .finally(() => {
         this.avgGoodQuality();
         this.avgGoodValue();
         this.avgWouldRecommend();
+        this.emitStarRating();
       })
   }
 
@@ -135,6 +158,7 @@ class App extends React.Component {
         </div>
         <div id="histogram">
           <Histogram
+            starPicker={this.starPicker}
             ratingBreakdown={this.state.ratingBreakdown}
             avgRating={this.state.avgRating}
             goodQuality={this.state.goodQualityPercent}
@@ -147,7 +171,7 @@ class App extends React.Component {
             <h2 className="review-h2">Most relevant reviews</h2>
           </div>
           {this.state.reviews.map((review) =>
-            <Review reviewData={review} seller={this.state.user.seller} />
+            <Review reviewData={review} seller={this.state.item.seller} />
           )}
         </div>
       </div>
