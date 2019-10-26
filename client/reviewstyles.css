@@ -129,6 +129,7 @@
     border: 1px solid rgb(177, 176, 176);
     float: right;
     font-size: 14px;
+    color:#0000FF;
     background: -webkit-gradient(linear,left top,left bottom,from(#fefefe),to(#f8f8f8));
 }
 
@@ -257,9 +258,16 @@
 
 .review-h2{
   font-weight: bold;
-  font-size:17px;
+  font-size:20px;
   width:50%;
   display:inline-block;
+}
+
+.review-h3{
+  font-weight: bold;
+  font-size:16px;
+  width: 50%;
+  display: inline-block;
 }
 
 .ebay-review-section-l {
@@ -429,7 +437,10 @@ form button{
 form h1{
   font-size: 1.3em;
   padding:auto;
-  line-height: 1.2em;
+  line-height: 1.3em;
+  color:#0000FF;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 form p, form h2{

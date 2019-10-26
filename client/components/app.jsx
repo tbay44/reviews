@@ -90,7 +90,6 @@ class App extends React.Component {
     this.setState({
       goodQualityPercent: Math.round(trueCounter / this.state.reviews.length * 100)
     })
-    console.log(trueCounter)
   }
 
   avgWouldRecommend() {
@@ -103,7 +102,6 @@ class App extends React.Component {
     this.setState({
       wouldRecommendPercent: Math.round(trueCounter / this.state.reviews.length * 100)
     })
-    console.log(trueCounter)
   }
 
   getStarAverage(){
@@ -168,7 +166,7 @@ class App extends React.Component {
         </div>
         <div className="reviews-right">
           <div className="reviews-header">
-            <h2 className="review-h2">Most relevant reviews</h2>
+            <h2 className="review-h3">Most recent reviews</h2>
           </div>
           {this.state.reviews.map((review) =>
             <Review reviewData={review} seller={this.state.item.seller} />

@@ -16,7 +16,7 @@ const Histogram = (props) => {
     {/* Average rating component */}
     <div className="rating-content-wrapper">
       <span className="ebay-review-start-rating">
-      {props.avgRating}
+      {props.avgRating.toFixed(1)}
       </span>
       <div className="ebay-star-rating">
           <span className="star-rating">
