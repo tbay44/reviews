@@ -1,39 +1,45 @@
 # Project Name
 
-> Project description
+tBay Reviews component
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/tbay/carousel
+  - https://github.com/tbay/personal-carousel
+  - https://github.com/tbay/product-seller-description
+  - https://github.com/tbay/search-bar
+  - https://github.com/tbay/image-gallery
+ 
+## Application information
 
-## Table of Contents
+This app is an independent microservice providing persistent reviews and ratings and providing review and rating submits for the products listed in the tbay website, an ebay item details page clone.
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+This app utilizes React, Express, MongoDB and Node.js
 
 ## Usage
 
-> Some usage instructions
+My component listens for an event emitted when a user makes a product selection on a different microservice to inform it what product to look up corresponding data object from my database. Upon recieving, it uses the data to inform the sub components displays (stars, pie graphs, star rating breakdown) and renders each of the reviews individually. A user can click the 'write review' button to bring up a modal with a form for the user to fill out. When a user clicks submit it writes to the database and then rerenders the reviews component to reflect the new data and display the new review.
 
-## Requirements
+## Challenges
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+Connecting my service to those of my teammates and distributing data between components while still maintaining a service oriented architecture.
 
-- Node 6.13.0
-- etc
+Styling my component to perfectly match eBay's pages.
 
-## Development
+Dynamically rendering styles such as the pie graphs, stars reflecting rating and the 'progress bars' of the breakdown of rating by number of stars.
 
-### Installing Dependencies
+Finding an appropriate deployment service and properly staging my component.
 
-From within the root directory:
+Designing a reverse proxy to display all the tbay components.
 
-```sh
-npm install -g webpack
-npm install
-```
+## Learnings
+Throughout the design of this application I gained a lot of experience in these areas:
 
+Seeing the ins and outs of how complex and sometimes convoluted styling on a major website can be.
+
+Witnessing first hand the strengths (modularity, flexibility and stability in the event of a microservice being down) and weaknesses (additional overhead in deployment, intercomponent communication and data storage) of service oriented architecture.
+
+Utilizing AGILE methodology, effective communication and proper workflow management on a team of four developers.
+
+## Demo
+Coming soon!
